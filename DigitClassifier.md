@@ -50,7 +50,7 @@ L2 = ((a - b)**2).mean().sqrt()
 # 8. How can you apply a calculation on thousands of numbers at once, many thousands of times faster than a Python loop?
 Using NumPy arrays, PyTorch tensors, we can accomplish thousands of numerical operations quickly. Because these data structures are memory compact structure, lives entirely in GPUs and numerical operations are implemented in optimized C code.
 
-# 9 Create a 3X3 tensor or array containing the numbers from 0 to 9. Double it. Select the bottom-right four numbers
+# 9. Create a 3X3 tensor or array containing the numbers from 0 to 9. Double it. Select the bottom-right four numbers
 ```
 import torch
 
@@ -62,5 +62,19 @@ tns
 
 tns[2:]
 ```
+# 10. What is broadcasting?
+When tensor operation applied on two different rank tensors, lower rank tensor automatically expands to higher rank tensor shape and will do elementwise operations. This is known as broadcasting. It eases the expressivity of mathematical operation and efficiency.
+```
+tensor([1,2,3]) + tensor([1])
+tensor([2,3,4])
+```
+
+# 11. Are metrics generally calculated using the training set or validation set? why?
+Metrics are calculated using validation set. Becuase it prevents over-fitting the model by validating the new data set which was not present in training set.
+
+# 12. What is SGD?
+
+
+
 
 
