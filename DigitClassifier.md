@@ -73,8 +73,26 @@ tensor([2,3,4])
 Metrics are calculated using validation set. Becuase it prevents over-fitting the model by validating the new data set which was not present in training set.
 
 # 12. What is SGD?
+Stochastic Gradient Descent is an optimization technique to maximize the performance by assigning the weights
 
+# 13. Why does SGD use mini-batches?
+SGD uses few data items to calculate the average loss in each epoch. It is called mini-batches. It helps to train the model quickly and accurately. Using whole data set will provide stable, accurate model but it takes long time to train it. On other hand, considering a single item for training brings imprecise and unstable model. Thus, choosing the correct batch size is one of the key decision in deep learning. In addition, GPU would not be performant enough if it uses either single item or whole data set.
 
+# 14. What are the seven steps in SGD for machine learning?
+Step 1 : Initialize the parameters
+Step 2 : Calculate the predictions
+Step 3 : Calculate the loss
+Step 4 : Calculate the gradients
+Step 5 : Step the weights
+Step 6 : Repeat the process
+Step 7 : stop on minimal loss
 
+# 15. How do we initialize the weights in a model?
+We initialize the parameters to random values. For example, linear model contains three parameters a,b,c. Using PyTorch, we are initializing the parameters and track their gradient as follows
+```
+params = torch.randn(3).requires_grad_()
+```
+
+# 16.What is loss?
 
 
