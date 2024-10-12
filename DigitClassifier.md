@@ -94,5 +94,15 @@ params = torch.randn(3).requires_grad_()
 ```
 
 # 16.What is loss?
+Loss is a metric describes how good model performs. Usually lower loss value indicates that model is performing good for their parameters assignments.
+Higher loss values means model is bad for their parameters assignments.
+
+# 17. Why can't we always use a high learning rate?
+Choosing a high learning rate leads to large loss or diverge from progressive path. On other hand, choosing a lower learning rates takes more steps to reach the goal.
+
+# 18. What is a gradient?
+A gradient is a change of weight assignment on model parameters to make model parameters. In other words, When changing the model parameters up or down, leads to higher or lower the model loss.
+
+
 
 
