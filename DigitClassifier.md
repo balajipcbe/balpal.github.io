@@ -103,6 +103,10 @@ Choosing a high learning rate leads to large loss or diverge from progressive pa
 # 18. What is a gradient?
 A gradient is a change of weight assignment on model parameters to make model parameters. In other words, When changing the model parameters up or down, leads to higher or lower the model loss.
 
+# 19. Do you need to know how to calculate gradients yourself?
+No, understanding derivative is good enough yet we do not need to calculate the gradient manually. Gradient calculating library is already implemented in PyTorch.
+
+# 20. Why can't we use accuracy as a loss function ?
 
 
 
