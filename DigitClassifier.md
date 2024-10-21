@@ -107,6 +107,12 @@ A gradient is a change of weight assignment on model parameters to make model pa
 No, understanding derivative is good enough yet we do not need to calculate the gradient manually. Gradient calculating library is already implemented in PyTorch.
 
 # 20. Why can't we use accuracy as a loss function ?
+Accuracy represents the absolute value of model at specific parameters. But loss function is expected to be providing the change (gradient) of model at any parameters. After certain weight assignment, acuracy does NOT improve which does not allow the model to learn new. Mathematically, accuracy becomes almost constant thus gradient (change) becomes zero.
+
+# 21. Draw the sigmoid function. What is special about its shape?
+sigmoid function takes any input value and smooshes it into output value between 0 and 1. As a loss function, it provides higher confidence when predictions are not between 0 and 1.
+
+# 22. What is the difference between a loss function and a metric?
 
 
 
