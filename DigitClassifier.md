@@ -113,6 +113,24 @@ Accuracy represents the absolute value of model at specific parameters. But loss
 sigmoid function takes any input value and smooshes it into output value between 0 and 1. As a loss function, it provides higher confidence when predictions are not between 0 and 1.
 
 # 22. What is the difference between a loss function and a metric?
+A loss function should be a derivative which provide a change for each weight adjustment. This enables the model to learn for a small changes in weights instead of big flat or high steep. A metric is absolute value to indicate how model is doing on each epoch.
 
+# 23. What is the function to calculate new weights using a learning rate?
+train_epoch calculates the gradient and assigns new weight based on learning rate.
+
+# 24. What does the DataLoader class do?
+DataLoader class creates mini batches of dataset from any Python collection.
+
+# 25. Write pseudocode showing the basic steps taken in each epoch for SGD.
+Input : model, learning rate, parameters
+step 1: iterate the data set as independent xb and dependent variable yb
+step 1.1: calculate the gradient for given xb, yb, model
+step 1.2: subtract the parameters weight based on parameter gradient and learning rate
+step 1.3: update parameter gradient as zero
+
+# 26. Create a function that, if passed two arguments [1,2,3,4] and 'abcd', returns [(1,a),(2,b),(3,c),(4,d)].What is special about that output data structure?
+```
+ds = L(enumerate([1,2,3,4], 'abcd'))
+```
 
 
