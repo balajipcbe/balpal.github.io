@@ -132,5 +132,21 @@ step 1.3: update parameter gradient as zero
 ```
 ds = L(enumerate([1,2,3,4], 'abcd'))
 ```
+# 27. What does view do in PyTorch?
+In PyTorch, View method changes the shape of tensor without changing its contents. parameter -1 makes the axis big to fit all the data.
 
+# 28. What are the bias parameters in a neural network? Why do we need them?
 
+# 29. What does the @ operator do in Python?
+In Python, matrix multiplication is represented with the @ operator.
+
+# 30. What does the backward method do?
+backward method calculates the gradient of the function.
+
+# 31. Why do we have to zero the gradients?
+backward method calculates the gradient and store it internal variable grad. On subsequent call to backward, it calculates the new gradient and adds to the existing gradient. so we need to zero it before calculate gradient.
+
+# 32. What information do we have to pass to Learner?
+To create learner, it needs following parameters. 1. data loaders 2. model 3. optimization function 4. loss function 5. metrics
+
+# 33. Show Python or pseudocode for the basic steps of a training loop?
