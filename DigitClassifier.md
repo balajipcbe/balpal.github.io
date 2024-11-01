@@ -150,3 +150,25 @@ backward method calculates the gradient and store it internal variable grad. On 
 To create learner, it needs following parameters. 1. data loaders 2. model 3. optimization function 4. loss function 5. metrics
 
 # 33. Show Python or pseudocode for the basic steps of a training loop?
+
+# 34. What is ReLU? Draw a plot of it for values from -2 to +2.
+```
+import torch
+import torch.nn.functional as F
+import matplotlib.pyplot as plt
+
+def plot_function(f, tx=None, ty=None, title=None, min=-2, max=2, steps=100, figsize=(6,4)):
+    x = torch.linspace(min, max, steps)
+    fig, ax = plt.subplots(figsize=figsize)
+    ax.plot(x, f(x))
+    if title:
+        ax.set_title(title)
+    if tx:
+        ax.set_xlabel(tx)
+    if ty:
+        ax.set_ylabel(ty)
+    plt.show()
+
+plot_function(F.relu)
+```
+
