@@ -171,4 +171,6 @@ def plot_function(f, tx=None, ty=None, title=None, min=-2, max=2, steps=100, fig
 
 plot_function(F.relu)
 ```
+![relu](/images/relu.png)
+
 
