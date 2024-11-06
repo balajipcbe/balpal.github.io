@@ -174,3 +174,15 @@ plot_function(F.relu)
 ![relu](/images/relu.png)
 
 
+# 35. What is an activation function?
+A neural network contains  a number of layers. Each layer is either linear or nonlinear. The nonlinearity layer is referred to as activation function.
+
+# 36. What is the difference between F.relu and nn.ReLU?
+| F.relu | nn.ReLU |
+|--------|---------|
+| functional api | PyTorch nn.ReLU class |
+| No additional neural network layer | Adds neural network layer|
+| No internal states | Internal state|
+
+# 37. The universal approximation theorem shows that any function can be approximated as closely as needed using just one nonlinearity. So why do we normally use more?
+The reason is performance. The deeper model reduces the number of parameters (small matrices); It yields reduced model training time, memory and better accuracy in results.
