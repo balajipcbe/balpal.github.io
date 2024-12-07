@@ -16,52 +16,76 @@ batch_tfms - applies transformation on batch of images in GPU.
 from fastcore.foundation import L
 
 # Create an L object from a list of numbers
-t = L(range(12))
+numbers = L(range(12))
 
 # Reverse the list
-t.reverse()
+numbers.reverse()
 
-# Access elements using advanced indexing
-print(t[0])  # Output: 11
-print(t[3, 5])  # Output: [8, 6]
 
+# square function
 def square(x):
     return x ** 2
 
+# checks whether even number
 def is_even(x):
     return x % 2 == 0
 
-print(t)
-print(t.sum())
-print(t.shuffle())
-print(t.itemgot())
-squared = t.map(square)
-print(squared)
-lambda_squared = t.map(lambda x: x ** 2)
-print(lambda_squared)
-even_numbers = t.filter(is_even)
-print(even_numbers)
-print(t.filter(lambda x: x % 2 == 1))
+# Access elements using advanced indexing
+print("Accessing number by its index :",numbers[0])  # Output: 11
+print("Accessing number by its range :",numbers[3, 5])  # Output: [8, 6]
+print("The sum of numbers :",numbers.sum())
+print("Before shuffle :", numbers)
+print("Shuffling the numbers :", numbers.shuffle()) #changes ordering
 
-#chain filter and map
-print(t.filter(lambda x: x % 2 == 1).map(lambda x : x ** 2))
+#map example
+print("map example : transforms numbers to its square")
+print(numbers)
+squared = numbers.map(square) #transforms numbers to its square value
+print("After applying square :", squared)
+lambda_squared = numbers.map(lambda x: x ** 2) #transforms numbers using lambda
+print("Using lambda :",lambda_squared)
 
-cycle_iter = t.cycle()
+# filter example
+print("filter example : selects number based on condition")
+even_numbers = numbers.filter(is_even)
+print("Even numbers :", even_numbers)
+print("Odd numbers using lambda :",numbers.filter(lambda x: x % 2 == 1))
 
+# chaining map and filter example
+print("chaining of map and filter :", numbers.filter(lambda x: x % 2 == 1).map(lambda x : x ** 2))
+
+# creating cyclic loop
+cycle_iter = numbers.cycle()
+print("Cyclic sequence :", end=' ')
 for _ in range(20):
     print(next(cycle_iter), end=' ')
 
-    
-# list of tuple
-t1 = L([1, 2, 3])
-t2 = L(['a','b','c'])
-t3 = L([1, 2, 3]).zip(L(['a','b','c']))
-print(t3)
+#Append newline
+print()
 
 data = L([(1,'a'),(2,'b'),(3,'c')])
-print()
-print(data.itemgot(0))
-print(data.itemgot(1))
+print("List of tuples :", data)
+print("Accessing the first element of tuples : ", data.itemgot(0))
+print("Accessing the second element of tuples :", data.itemgot(1))
+
+#output
+Accessing number by its index : 11
+Accessing number by its range : [8, 6]
+The sum of numbers : 66
+Before shuffle : [11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
+Shuffling the numbers : [8, 7, 4, 10, 9, 11, 3, 1, 6, 2, 0, 5]
+map example : transforms numbers to its square
+[11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
+After applying square : [121, 100, 81, 64, 49, 36, 25, 16, 9, 4, 1, 0]
+Using lambda : [121, 100, 81, 64, 49, 36, 25, 16, 9, 4, 1, 0]
+filter example : selects number based on condition
+Even numbers : [10, 8, 6, 4, 2, 0]
+Odd numbers using lambda : [11, 9, 7, 5, 3, 1]
+chaining of map and filter : [121, 81, 49, 25, 9, 1]
+Cyclic sequence : 11 10 9 8 7 6 5 4 3 2 1 0 11 10 9 8 7 6 5 4 
+List of tuples : [(1, 'a'), (2, 'b'), (3, 'c')]
+Accessing the first element of tuples :  [1, 2, 3]
+Accessing the second element of tuples : ['a', 'b', 'c']
 ```
 
    
