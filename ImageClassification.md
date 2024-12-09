@@ -1,7 +1,7 @@
 #  Questionnaire
 
 ## 1. Why do we first resize to a large size on the CPU, and then to a smaller size on the GPU?
-   Performance and image data accuracy are the primary factors for resizing to a larger size on CPU then to a smaller size on the GPU.
+   Performance and data quality are the primary factors for resizing to a larger size on CPU then to a smaller size on the GPU.
    For performance reason, all images need to be in uniform size to create tensors. To make it as uniform, the image crop might introduce spurious empty zone and degrade the data.
    and compose all data augmentations in a batch. Uniform image size, batch data augmentation increases GPU performance.
 
@@ -123,6 +123,21 @@ with new_file_path.open('w') as file:
 print("Is new_file_path exist :", new_file_path.exists())
 ```
 
+## 6. Give two examples of ways that image transformations can degrade the quality of the data.
+1. Rotating the image 45 degrees fills the corner regions of the new bounds with emptiness
+2. Image rotation ad zoom interpolates the pixed which lowers the quality
+
+## 7. What method does fastai provide to view the data in a DataLoaders?
+data loader's show_batch method provides the image view from data loaders. It takes nrow and ncolumn as integer parameters.
+
+## 8. What method does fastai provide to help you debug a Datablock?
+data loader summary method provides a lot of details to debug the input 
+
+## 9. Should you hold off on training a model until you have thoroughly cleaned your data?
+No, we can start training the model to establish the baseline results on clean data.
+
+## 10. What aret the two pieces that are combined into cross-entropy loss in PyTorch?
+1. softmax 2. Log liklihood 
 
    
     
