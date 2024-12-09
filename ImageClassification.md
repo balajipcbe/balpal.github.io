@@ -88,5 +88,41 @@ Accessing the first element of tuples :  [1, 2, 3]
 Accessing the second element of tuples : ['a', 'b', 'c']
 ```
 
+## 5. Look up the documentation for the Python pathlib module and try using a few methods of the Path class.
+```
+from pathlib import Path
+
+# Create a Path object for current dir
+path = Path('.')
+#Create a Path object for file
+file_path = Path('/notebooks/Sample.ipynb')
+
+#List dirs under current dir
+list_subdirs = [item for item in path.iterdir() if item.is_dir()]
+print(list_subdirs)
+
+#Navigating file
+notebookfile_path = path / file_path /'Sample.ipynb'
+
+python_files = list(path.glob('**/*.ipynb'))
+python_files
+
+# Querying Path properties
+print("Is file exist :", file_path.exists())
+
+# Read the contents of a file
+with file_path.open('r') as file_path:
+    content = file_path.read()
+print(len(content))
+
+# Write to a file
+new_file_path = path / 'hello.txt'
+with new_file_path.open('w') as file:
+    file.write('Hello, World!')
+
+print("Is new_file_path exist :", new_file_path.exists())
+```
+
+
    
     
