@@ -157,3 +157,11 @@ The softmax ensures that all activations are all between 0 and 1 and they sum to
 ## 14. Why can't use torch.where to create a loss function for datasets where our label can have more than two categories?
 torch.where works based boolean condition selects the items. Based on boolean condition, this tranforms the data set into two categories so in multi-category classification torch.where is not applicable.
 
+## 15. What is the value of log(-2)? why?
+Natural logarithm of any value is undefined. Lets assume log base e(-2) = x. e^x = -2. There is no value of x in exponent gives negative value so natural logarithm of negative value is undefined.
+
+## 16.
+
+## 16. What are good rules of thumb for picking a learning rate from the learning rate finder?
+
+
