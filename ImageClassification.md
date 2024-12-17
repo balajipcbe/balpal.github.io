@@ -145,7 +145,7 @@ The softmax ensures that all activations are all between 0 and 1 and they sum to
 ## 12. When might you want your activations to not have these two properties?
   In case binary classification problems, we do not want activations to follow these properties. Higher activation belongs to one category otherwise it does belong to other category. 
 
-## 13. Calculate thh exp and softmax columns of figure 5-3 yourself.
+## 13. Calculate the exp and softmax columns of figure 5-3 yourself.
 |Activation|	Exp	|Softmax|
 |----------|---------|-------|
 |0.02|	1.02020134	|0.222098944|
@@ -155,13 +155,31 @@ The softmax ensures that all activations are all between 0 and 1 and they sum to
 
 
 ## 14. Why can't use torch.where to create a loss function for datasets where our label can have more than two categories?
-torch.where works based boolean condition selects the items. Based on boolean condition, this tranforms the data set into two categories so in multi-category classification torch.where is not applicable.
+torch.where works based boolean condition. Based on boolean condition, this tranforms the data set into two categories so in multi-category classification torch.where is not applicable.
 
 ## 15. What is the value of log(-2)? why?
 Natural logarithm of any value is undefined. Lets assume log base e(-2) = x. e^x = -2. There is no value of x in exponent gives negative value so natural logarithm of negative value is undefined.
 
-## 16.
-
 ## 16. What are good rules of thumb for picking a learning rate from the learning rate finder?
+1. One order of magnitude learning rate must be chosen where minumum loss is observed
+2. choose learning rate where loss decreases immediately.
+
+## 17. What two steps does the fine_tune method do?
+1.Trains the randomly added layers for one epoch with all other layers frozen
+2.Unfreeze all the layers and trains them for the number of epochs requested
+
+## 18. In Jupyter Notebook, how do you get the source code for a method or function?
+use question mark at the end of key word. Ex, learn.fine_tune??
+
+## 19. What are discriminative learning rates?
+This techniques chooses different learning rates. It uses lower learning rate on early layers and higher learning rate at final layers.
+
+## 20. How is a Python slice object interpreted when passed as learning rate to fastai?
+learn.fit_one_cycle(12, lr_max = slice(1e-6, 1e-4)). In slice object, first learning rate (lower) will be used in early learning process and second learning rate will be used in later layers and in between layer uses multiplicative learning rates.
+
+## 21. Why is early stopping a poor choice when using 1 cycle training?
+
+
+
 
 
