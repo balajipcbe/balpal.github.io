@@ -152,3 +152,8 @@ The softmax ensures that all activations are all between 0 and 1 and they sum to
 |-2.49|	0.082909967	|0.01804959|
 |1.25	|3.490342957	|0.759851466|
 |SUM	|4.593454264	|1|
+
+
+## 14. Why can't use torch.where to create a loss function for datasets where our label can have more than two categories?
+torch.where works based boolean condition selects the items. Based on boolean condition, this tranforms the data set into two categories so in multi-category classification torch.where is not applicable.
+
