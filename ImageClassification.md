@@ -136,8 +136,19 @@ data loader summary method provides a lot of details to debug the input
 ## 9. Should you hold off on training a model until you have thoroughly cleaned your data?
 No, we can start training the model to establish the baseline results on clean data.
 
-## 10. What aret the two pieces that are combined into cross-entropy loss in PyTorch?
+## 10. What are the two pieces that are combined into cross-entropy loss in PyTorch?
 1. softmax 2. Log liklihood 
 
-   
-    
+## 11. What are the two properties of activations that softmax ensures? Why is this important?
+The softmax ensures that all activations are all between 0 and 1 and they sum to 1. These two properties normalize the activations so we can choose the activation which is higher value over n cateogory and we do not want to worry about their relative higher or lower or both.
+
+## 12. When might you want your activations to not have these two properties?
+  In case binary classification problems, we do not want activations to follow these properties. Higher activation belongs to one category otherwise it does belong to other category. 
+
+## 13. Calculate thh exp and softmax columns of figure 5-3 yourself.
+|Activation|	Exp	|Softmax|
+|----------|---------|-------|
+|0.02|	1.02020134	|0.222098944|
+|-2.49|	0.082909967	|0.01804959|
+|1.25	|3.490342957	|0.759851466|
+|SUM	|4.593454264	|1|
