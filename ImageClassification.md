@@ -178,6 +178,13 @@ This techniques chooses different learning rates. It uses lower learning rate on
 learn.fit_one_cycle(12, lr_max = slice(1e-6, 1e-4)). In slice object, first learning rate (lower) will be used in early learning process and second learning rate will be used in later layers and in between layer uses multiplicative learning rates.
 
 ## 21. Why is early stopping a poor choice when using 1 cycle training?
+After each epoch, model will be saved and choose the model has the best accuracy. This is early stopping. However, this approach does not yield best results. the reason is middle epochs has really lower learning rate which predicts the best results.
+
+## 22. What is the difference between resnet50 and resnet101?
+resnet50 and resnet101 are family of models pretrained on ImageNet. 50 and 101 indicates the number of layers used to train the model.
+
+## 23. What does to_fp16 do?
+The deeper architecture consumes long training time. To speed up the training, GPUs are enabled with mixed precision training that means GPUs are using half precision floating point 16 calculation whereever possible this speeds up the training by 2-3x times. to_fp16() call to learner for optimized learning.
 
 
 
